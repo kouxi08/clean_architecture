@@ -1,8 +1,12 @@
 package port
 
-import "context"
+import (
+	"context"
 
-type UserINputPort interface {
+	"github.com/kouxi08/clean_architecture/entity"
+)
+
+type UserInputPort interface {
 	GetUserByID(ctx context.Context, userID string)
 }
 

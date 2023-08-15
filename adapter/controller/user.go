@@ -5,12 +5,12 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/kouxi08/clean_architecture/tree/main/usecase/port"
+	"github.com/kouxi08/clean_architecture/usecase/port"
 )
 
 type User struct {
-	OutputFactory func(w http.ResponseWriter) port.NewUserOutputPort
-	InputFactory  func(o port.UserOutputPort, u port.NewUserRepository) port.NewUserInputPort
+	OutputFactory func(w http.ResponseWriter) port.UserOutputPort
+	InputFactory  func(o port.UserOutputPort, u port.UserRepository) port.UserInputPort
 	RepoFactory   func(c *sql.DB) port.UserRepository
 	Conn          *sql.DB
 }
